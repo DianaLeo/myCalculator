@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+.grid-container{
+    background-color: aliceblue;
+    margin: auto;
+    padding: 30px;
+    display: grid;
+    grid-template: auto;
+}
+
+#display{
+    padding: 30px;
+    background-color: powderblue;
+    text-align: right;
+}
+
+.main-keys-container {
+    
+    display: grid;
+    grid-template: auto auto auto auto auto / 25% 25% 25% 25%;
+
+}
+
+.scientific-keys-container{
+    padding: 15px 0px;
+    display: grid;
+    grid-template: 25% 25% 25% 25% / auto auto auto;
+
+}
+
+.grid-item{
+    padding: 15px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: aliceblue;
+    outline-style: solid;
+    outline-width: 5px;
+    outline-color: aliceblue;
+    background-color: cadetblue;
+}
+
+.g-i-calculation,.g-i-clear,.g-i-back{
+    color: white;
+    background-color: cadetblue;
+}
+.g-i-calculation:hover,.g-i-clear:hover,.g-i-back:hover{
+    background-color: rgb(88, 135, 146);
+}
+.g-i-calculation:active,.g-i-clear:active,.g-i-back:active{
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.g-i-num{
+    background-color: thistle;
+}
+.g-i-num:hover{
+    background-color: rgb(202, 183, 204);
+}
+.g-i-num:active{
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.g-i-equal{
+    background-color: darkturquoise;
+}
+.g-i-equal:hover{
+    background-color: rgb(9, 187, 190);
+}
+.g-i-equal:active{
+    opacity: 0;
+    transition: 0.8s;
+}
+
+@media only screen and (min-width:600px){
+    .grid-container{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width:768px){
+    #display{grid-area: display;}
+    .main-keys-container{
+
+        grid-area: main;
+        padding: 15px 0px;
+    }
+    .scientific-keys-container{
+
+        grid-area: scientific;
+    }
+    .grid-container {
+        width: 75%;
+        grid-template: 
+            'display display'
+            'main scientific'
+    }
+}
+@media only screen and (min-width:992px){
+    .grid-container{width: 60%;}
+}
